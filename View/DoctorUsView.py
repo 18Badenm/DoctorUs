@@ -34,9 +34,10 @@ class DoctorUsView:
             format_ = [sg.Text(v, size=(25, 1)),
                        sg.InputText(key=k, size=(30, 1))]
             layout.append(format_)
+            layout.append([sg.Button('AUDIO', bind_return_key=True),
+                       sg.Button('SALIR')])
         layout.append([sg.Button('ENVIAR', bind_return_key=True),
                        sg.Button('SALIR')])
-
         window = sg.Window(title='Antecedentes', layout=layout)
         event, values = window.read()
         if event == 'SALIR':  # quit if exit button
